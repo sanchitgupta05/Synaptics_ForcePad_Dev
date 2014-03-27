@@ -1,0 +1,85 @@
+#include <FreqCounter.h>
+
+int fpin = A5;
+int notea = 13;
+int noteb = 12;
+int notec = 7;
+int noted = 8;
+int notee = 2;
+int notef = 4;
+int noteg = 10;
+int noteh = 9;
+
+void setup() {
+  //First, I'm going to set analog pin 5 as the input pin. 
+  pinMode(fpin, INPUT);
+  pinMode(notea, OUTPUT);
+  pinMode(noteb, OUTPUT);
+  pinMode(notec, OUTPUT);
+  pinMode(noted, OUTPUT);
+  pinMode(notee, OUTPUT);
+  pinMode(notef, OUTPUT);
+  pinMode(noteg, OUTPUT);
+  pinMode(noteh, OUTPUT);
+ // Serial.begin(9600);
+}
+
+void loop() {
+  long theFreq;
+  //digitalWrite(notea, LOW);
+  theFreq = getFreq(fpin);
+  //printf("hi");
+  if((theFreq > 410) && (theFreq < 470)) {
+      digitalWrite(notea, HIGH);
+  }
+  else if((theFreq > 484) && (theFreq < 504)) {
+      digitalWrite(noteb, HIGH);
+  }
+  else if((theFreq > 503) && (theFreq < 543)) {
+      digitalWrite(notec, HIGH);    
+  }
+  else if((theFreq > 587) && (theFreq < 607)) {
+      digitalWrite(noted, HIGH);
+  }
+  else if((theFreq > 639) && (theFreq < 679)) {
+      digitalWrite(notee, HIGH);
+  }
+  else if((theFreq > 688) && (theFreq < 738)) {
+      digitalWrite(notef, HIGH);
+  }
+  else if((theFreq > 754) && (theFreq < 814)) {
+      digitalWrite(noteg, HIGH);
+  }
+  else if((theFreq > 840) && (theFreq < 920)) {
+      digitalWrite(noteh, HIGH);
+  }
+  else {
+    digitalWrite(notea, LOW);
+    digitalWrite(noteb, LOW);
+    digitalWrite(notec, LOW);
+    digitalWrite(noted, LOW);
+    digitalWrite(notee, LOW);
+    digitalWrite(notef, LOW);
+    digitalWrite(noteg, LOW);
+    digitalWrite(noteh, LOW);
+  }
+   
+  
+  //else if(
+}
+
+/*
+* DescriptionL getFreq
+* 
+*
+*/
+long getFreq(int pin) {
+  
+  //FOR ADDITIONAL PRECISION, WE CAN USE SAMPLING (DRAWBACKS: TOO SLOW)
+  
+  //IF WE ASSUME SINUSOID, WE CAN USE THE SHORTCUT OF THE FAST FOURIER TRANSFORM BY SIMPLY TIMING VALUES FOR HIGH->LOW
+  long perbytwo = pulseIn(pin, HIGH); // get the pusle in
+  long per = 2*perbytwo;
+  return per;
+
+}
