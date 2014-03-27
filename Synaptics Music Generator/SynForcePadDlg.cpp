@@ -1,12 +1,3 @@
-//===========================================================================
-// Copyright (c) 1996-2012 Synaptics Incorporated. All rights reserved.
-//
-// SynCom API demo for ForcePad
-//
-// SynGestureDlg.cpp : implementation file
-//
-// Jan, 2012
-//===========================================================================
 
 #include <iostream>
 #include <stdio.h>
