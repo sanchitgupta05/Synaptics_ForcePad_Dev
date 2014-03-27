@@ -1,0 +1,19 @@
+//===========================================================================
+// Copyright (c) 1996-2012 Synaptics Incorporated. All rights reserved.
+//
+// SynCom API demo for ForcePad
+//
+// SynForcePad.rc2
+//
+// Feb, 2012
+//
+//===========================================================================
+
+#ifdef APSTUDIO_INVOKED
+#error this file is not editable by Microsoft Visual C++
+#endif //APSTUDIO_INVOKED
+
+/////////////////////////////////////////////////////////////////////////////
+// Add manually edited resources here...
+
+/////////////////////////////////////////////////////////////////////////////
